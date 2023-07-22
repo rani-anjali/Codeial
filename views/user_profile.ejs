@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/css/user_profile.css">
+
+<img src="<%= user.avatar %>" alt="<%= user.name %>" width="100">
+        <!-- <h1>hello u r on user page..<%= title%></h1> -->
+
+        <%if(user.id == profile_user.id){%>
+                <!-- if users matches then show -->
+                <form action="/users/update/<%=profile_user._id%>" enctype="multipart/form-data" method="POST" >
+                        <input type="text" name="name" placeholder="Your Name" value="<%=profile_user.name%>" required>
+                        <input type="email" name="email" placeholder="Your Email" value="<%=profile_user.email%>" required>
+                        <input type="file" name="avatar" id="" placeholder="profile-picture">
+                        <input type="submit" value="Update">
+                </form>
+                <%}else{%>
+                        <!-- if not then show only profile info -->
+                        <p><%= profile_user.name %></p>
+                        <p><%= profile_user.email %></p>
+                <%}%>
+
+
+                <!-- where is profile update wo av nii bnaya hai ok -->
+                <!-- konsa page retrive nhi  ho  raha? -->
